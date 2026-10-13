@@ -3,4 +3,22 @@ name = "taskbar-velum"
 version = "0.1.0"
 edition = "2024"
 
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+
 [dependencies]
+tray-icon = "0.26.1"
+winit = "0.30.13"
+windows = {
+    version = "0.62.2",
+    features = [
+        "Win32_Foundation",
+        "Win32_UI_WindowsAndMessaging",
+        "Win32_Graphics_Dwm",
+        "Win32_UI_Accessibility",
+    ]
+}
+slint = "1.18.1"
+image = "0.25.10"
